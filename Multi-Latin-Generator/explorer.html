@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multi-Latin Square Explorer</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#10151c;color:#e7edf5;font:15px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:28px 20px}h1{font-size:26px;margin:8px 0}p{color:#aebccc;line-height:1.5}.eyebrow{color:#90d9b7;font-size:12px;letter-spacing:2px}form{display:flex;gap:16px;align-items:end;flex-wrap:wrap;margin:24px 0}label{display:grid;gap:7px;color:#b8c6d5}input,button,.button{font:inherit;border:1px solid #405067;border-radius:8px;padding:10px 12px;background:#1a2432;color:#eef4fb}input[type=number]{width:110px}button,.button{cursor:pointer;text-decoration:none}button.primary{background:#9be6c0;color:#102b20;border-color:#9be6c0}.stats{display:flex;gap:12px;flex-wrap:wrap}.stat{padding:12px 16px;border:1px solid #2a3849;border-radius:10px;flex:1;min-width:145px}.stat span{display:block;color:#aebccc;font-size:12px;margin-bottom:6px}.stat strong{font-size:19px;font-weight:500}.gridbox{margin:24px 0 14px;overflow:auto;max-height:70vh;background:#18222e;border-radius:10px;padding:14px}.square{border-collapse:separate;border-spacing:2px;margin:auto}.square th{color:#b8c6d5;font-weight:400;padding:4px}.square td{width:38px;height:38px;text-align:center;color:#17232d;border-radius:4px;font-weight:500}.square .window-cell{outline:3px solid #f5f7fa;outline-offset:-3px}.tools{margin-top:10px}#detail{color:#9be6c0;min-height:24px}.footer{font-size:12px;margin-top:24px}a{color:#9ac8f4}:focus-visible{outline:3px solid #9ac8f4;outline-offset:3px}
+</style></head><body><main>
+<div class="eyebrow">COMBINATORICS EXPLORER</div>
+<h1>Multi-Latin square generator</h1>
+<p>Every symbol appears k times per row and column. Every overlapping d × d window has distinct symbols.</p>
+<form method="get" action="/">
+<label>Symbols · m<input name="m" type="number" min="1" max="100" value="__M__" required></label>
+<label>Repetitions · k<input name="k" type="number" min="1" max="100" value="__K__" required></label>
+<label>Window size · d<input name="d" type="number" min="1" max="99" value="__D__" required></label>
+<button class="primary">Generate square</button><a class="button" href="__DOWNLOAD__">Export CSV</a>
+</form>
+__STATS__
+<div class="gridbox">__GRID__</div>
+<div id="detail">__INSPECTION__</div>
+<form class="tools" method="get" action="/">
+<input type="hidden" name="m" value="__M__"><input type="hidden" name="k" value="__K__"><input type="hidden" name="d" value="__D__">
+<label>Window starting row<input name="row" type="number" min="1" max="97" value="__ROW__" required></label>
+<label>Window starting column<input name="col" type="number" min="1" max="97" value="__COL__" required></label>
+<button>Inspect block</button></form>
+<p class="footer">Construction 3.2 · Hoffman, Johnson &amp; Schloss (2026). For d &gt; 1, m must be at least d² + 1. <a href="https://ajc.maths.uq.edu.au/pdf/95/ajc_v95_p083.pdf" target="_blank" rel="noreferrer">Read the paper</a><br>Row and column positions start at 1. Symbols start at 0. The same inputs produce the same square.</p>
+</main></body></html>
